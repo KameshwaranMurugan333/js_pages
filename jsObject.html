@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Objects</title>
+    </head>
+
+    <body>
+        <p id="firstName"></p>
+        <p id="lastName"></p>
+        <p id="age"></p>
+        <button onclick="changeName()">Change Name</button>
+    </body>
+
+    <script>
+        let myDetails = {
+            firstName: "Kamesh",
+            lastName:"M",
+            age: "25"
+        }
+
+        document.getElementById("firstName").innerHTML = myDetails.firstName;
+        document.getElementById("lastName").innerHTML = myDetails.lastName;
+        document.getElementById("age").innerHTML = myDetails.age;
+
+        function changeName(){
+            myDetails.firstName = "Kameshwaran";
+            document.getElementById("firstName").innerHTML = myDetails.firstName;
+        }
+    </script>
+</html>

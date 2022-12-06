@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Conditional Statement</title>
+</head>
+
+<body>
+    <p id="count">0</p>
+    <button id="btn" onclick="increment()">Increment</button>
+</body>
+
+<script>
+    let pCount = document.getElementById('count');
+    pCount.style.color = "red";
+    function increment() {
+        let currentCount = pCount.innerText;
+        currentCount = parseInt(currentCount) + 1;
+
+        if (currentCount === 0) {
+            pCount.style.color = "red";
+        } else if (currentCount > 0 && currentCount < 5) {
+            pCount.style.color = "yellow";
+        } else if (currentCount >= 5 && currentCount < 10) {
+            pCount.style.color = "green";
+        } else {
+            pCount.style.color = "blue";
+        }
+
+        pCount.innerHTML = currentCount;
+    }
+</script>
+
+</html>

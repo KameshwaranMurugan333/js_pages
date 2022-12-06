@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+    <button onclick="callFunction()">Call Function</button>
+    <button onclick="callArrowFunction()">Call Arrow Function</button>
+</body>
+
+<script>
+    function callFunction() {
+        console.log(this);
+        console.log("I am Called");
+    }
+
+    const callArrowFunction = () => {
+        console.log(this);
+        console.log("I am Arrow function");
+    }
+
+    let a = 10;
+    let b = 20;
+
+    function sum(x, y) {
+        return x + y;
+    }
+
+    const sumArr = (x, y) => x + y;
+
+    document.write(sumArr(a, b));
+</script>
+
+</html>

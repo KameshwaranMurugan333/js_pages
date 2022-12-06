@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Class</title>
+</head>
+
+<body>
+    <h1>JS Classes</h1>
+</body>
+
+<script>
+    class Student {
+        constructor(name, age, mark) {
+            this.name = name;
+            this.age = age;
+            this.mark = mark;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        getMark() {
+            return this.mark
+        }
+
+        giveAllDetails() {
+            return this.getName() + " " + this.getAge() + " " + this.getMark();
+        }
+    }
+
+    const kameshObj = new Student("Kameshwaran", 26, 460);
+
+    console.log("Name:", kameshObj.getName());
+    console.log("Age:", kameshObj.getAge());
+    console.log("Mark:", kameshObj.getMark());
+    console.log("All Details:", kameshObj.giveAllDetails());
+    console.log("Name:", kameshObj.name);
+    console.log("Age:", kameshObj.age);
+    console.log("Mark:", kameshObj.mark);
+</script>
+
+</html>

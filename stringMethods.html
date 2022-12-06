@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Methods</title>
+    </head>
+
+    <body>
+        <p id="message"></p>
+        <button onclick="length()">String Length</button>
+
+        <div id="parent">
+
+        </div>
+    </body>
+
+    <script>
+        let str=  "mystring";
+
+        document.getElementById("message").innerHTML = str;
+
+        function length(){
+            const button = document.createElement("button");
+            button.innerHTML="I am created from JS";
+            button.style.background="red";
+
+            document.body.appendChild(button);
+
+            const h1Ele = document.createElement("h1");
+            h1Ele.innerHTML = "I am Heading 1";
+
+            document.getElementById("parent").appendChild(h1Ele);
+            
+            document.getElementById("message").innerHTML = str.length;
+        }
+    </script>
+</html>

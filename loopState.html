@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Looping Statement</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn" onclick="loadData()">Load Data</button>
+    <button id="btn2" onclick="loadForIn()">Load Data For In</button>
+    <button id="btn3" onclick="loadForOf()">Load Data For Of</button>
+    <button id="btn4" onclick="loadWhileLoop()">Load While Loop</button>
+    <button id="btn5" onclick="loadDoWhile()">Load Do While Loop</button>
+    <table id="table">
+        <tr>
+            <td>Sl.No</td>
+            <td>Name</td>
+            <td>Mobile</td>
+            <td>Mark</td>
+        </tr>
+    </table>
+</body>
+
+<script>
+
+    // For Loop
+    function loadData() {
+        for (let i = 1; i <= 10; i = i + 1) {
+            let tr = document.createElement("tr");
+
+            let slNotd = document.createElement("td");
+            slNotd.innerHTML = i;
+
+            let nametd = document.createElement("td");
+            nametd.innerHTML = "Kamesh"
+
+            tr.appendChild(slNotd);
+            tr.appendChild(nametd);
+
+            document.getElementById('table').appendChild(tr);
+        }
+    }
+
+    // For In
+    function loadForIn() {
+        let object = { name: "Kamesh", age: "26" };
+
+        for (let i in object) {
+            console.log("I =====>", i);
+            console.log("I Value =====>", object[i]);
+        }
+
+        let myArray = ["fruits", "vegtables", "bike", "car"];
+
+        for (let i in myArray) {
+            console.log("I =====>", i);
+            console.log("I Value =====>", myArray[i]);
+        }
+    }
+
+    // For Of
+    function loadForOf() {
+
+        let myArray = ["fruits", "vegtables", "bike", "car"];
+
+        for (let i of myArray) {
+            console.log("I =====>", i);
+        }
+    }
+
+    //while loop
+    function loadWhileLoop() {
+        let i = 0;
+        while (i < 10) {
+            console.log("i:", i);
+            i = i + 1;
+        }
+    }
+
+    //Do While loop
+    function loadDoWhile() {
+        let i = 0;
+        do {
+            console.log("i:", i);
+            i = i + 1;
+        } while (i > 10);
+    }
+</script>
+
+</html>

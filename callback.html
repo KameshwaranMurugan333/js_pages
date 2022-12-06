@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Callback Function</title>
+</head>
+
+<body>
+    <h1>JS Callback Function</h1>
+    <input id="a" type="number" />
+    <input id="b" type="number" />
+    <button id="sum" onclick="add()">Sum</button>
+    <p id="result"></p>
+</body>
+
+<script>
+
+    async function add() {
+        try {
+            console.log(window);
+            await sum(5, 6, print, 8000);
+            await sum(2, 3, print, 5000);
+        } catch (err) {
+            alert("Opps!, Something went wrong");
+            console.log(err);
+        }
+    }
+
+    function sum(a, b, print, timeout) {
+        return new Promise((resolve, reject) => {
+            let sum = a + b;
+            setTimeout(() => {
+                // print(sum);
+                // resolve();
+                reject("Not able to find the sum of the given number");
+            }, timeout)
+        })
+    }
+
+    function print(str) {
+        document.getElementById("result").innerHTML = "Result:" + str;
+    }
+
+</script>
+
+</html>

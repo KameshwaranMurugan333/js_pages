@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Conditional Statement - switch</title>
+</head>
+
+<body>
+    <p id="count">0</p>
+    <button id="btn" onclick="increment()">Increment</button>
+</body>
+
+<script>
+    let pCount = document.getElementById('count');
+    pCount.style.color = "red";
+    function increment() {
+        let currentCount = pCount.innerText;
+        currentCount = parseInt(currentCount) + 1;
+
+        switch (currentCount) {
+            case 0:
+                pCount.style.color = "red";
+                break;
+
+            case 1:
+                pCount.style.color = "green";
+                break;
+
+            case 2:
+                pCount.style.color = "orange";
+                break;
+
+            case 3:
+                pCount.style.color = "blue";
+                break;
+
+            default:
+                pCount.style.color = "purple";
+                break;
+        }
+
+        pCount.innerHTML = currentCount;
+    }
+</script>
+
+</html>

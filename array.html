@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Arrays</title>
+</head>
+
+<body>
+    <p id="toString"></p>
+    <p id="join"></p>
+    <p id="length"></p>
+
+    <button id="push" onclick="pushArray()">Push</button>
+    <button id="pop" onclick="popArray()">Pop</button>
+    <button id="shift" onclick="unShiftArray()">UnShift</button>
+    <button id="unshift" onclick="shiftArray()">Shift</button>
+    <button id="lengthBtn" onclick="getLength()">Length</button>
+    <button id="spliceBtn" onclick="spliceBtn()">Splice</button>
+    <button id="sliceBtn" onclick="sliceBtn()">Slice</button>
+</body>
+
+<script>
+    let fruits = ["Apple", "Orange", "Banana", "Pine Apple"];
+
+    document.getElementById("toString").innerHTML = fruits.toString();
+    document.getElementById("join").innerHTML = fruits.join("-");
+
+    function pushArray() {
+        fruits.push("Mango");
+        document.getElementById("toString").innerHTML = fruits.toString();
+        document.getElementById("join").innerHTML = fruits.join("-");
+    }
+
+    function popArray() {
+        fruits.pop();
+        document.getElementById("toString").innerHTML = fruits.toString();
+        document.getElementById("join").innerHTML = fruits.join("-");
+    }
+
+    function unShiftArray() {
+        fruits.unshift("Mango");
+        document.getElementById("toString").innerHTML = fruits.toString();
+        document.getElementById("join").innerHTML = fruits.join("-");
+    }
+
+    function shiftArray() {
+        fruits.shift();
+        document.getElementById("toString").innerHTML = fruits.toString();
+        document.getElementById("join").innerHTML = fruits.join("-");
+    }
+
+    function getLength() {
+        document.getElementById("length").innerHTML = fruits.length;
+    }
+
+    function spliceBtn() {
+        fruits.splice(2, 0, "Lemon", "Kiwi");
+        document.getElementById("toString").innerHTML = fruits.toString();
+        document.getElementById("join").innerHTML = fruits.join("-");
+    }
+
+    function sliceBtn() {
+        let fruits2 = fruits.slice(1,2);
+        document.getElementById("toString").innerHTML = fruits2.toString();
+        document.getElementById("join").innerHTML = fruits2.join("-");
+    }
+
+    console.log(fruits[0]);
+    console.log(fruits[1]);
+    console.log(fruits[2]);
+    console.log(fruits[3]);
+
+    fruits[4] = "Lemon";
+
+    console.log(fruits[4]);
+
+    fruits[0] = "Apples";
+
+    console.log(fruits[0]);
+
+    let dummyArray = [21, 23, 35, 35];
+
+    let arrayObject = [
+        {
+            firstname: "Kamesh"
+        },
+        {
+            firstname: "Abdul"
+        },
+        {
+            firstname: "Sharda",
+        },
+        {
+            firstname: "Vidhya"
+        }
+    ];
+
+    console.log(arrayObject[0].firstname);
+</script>
+
+</html>

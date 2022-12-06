@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web API's</title>
+</head>
+
+<body>
+    <h1>Form APIs</h1>
+
+    <!-- Form APIs -->
+    <input id="email" type="email" min="100" max="300" required>
+    <button onclick="submitForm()">OK</button>
+
+    <p id="demo"></p>
+
+    <!-- History APIs -->
+    <h1>History API</h1>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goForward()">Go Forward</button>
+
+    <!-- Storage APIs -->
+    <h1>Storage API</h1>
+    <h3>Local Storage</h3>
+    <input id="local">
+    <button onclick="saveToLocalStorage()">Save</button>
+    <button onclick="removeLocalStorage()">Remove</button>
+    <button onclick="clearLocalStorage()">Clear</button>
+    <p id="localStorage"></p>
+
+
+    <h3>Session Storage</h3>
+    <input id="session">
+    <button onclick="saveToSessionStorage()">Save</button>
+    <button onclick="removeSessionStorage()">Remove</button>
+    <button onclick="clearSessionStorage()">Clear</button>
+    <p id="sessionStorage"></p>
+</body>
+
+<script>
+    function submitForm() {
+        const inpObj = document.getElementById("id1");
+        if (!inpObj.checkValidity()) {
+            document.getElementById("demo").innerHTML = inpObj.validationMessage;
+        }
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+
+    function goForward() {
+        window.history.forward();
+    }
+
+    function saveToLocalStorage() {
+        localStorage.setItem("name", document.getElementById("local").value);
+
+        document.getElementById("localStorage").innerHTML = "Name: " + localStorage.getItem("name");
+    }
+
+    function saveToSessionStorage() {
+        sessionStorage.setItem("name", document.getElementById("session").value);
+
+        document.getElementById("sessionStorage").innerHTML = "Name: " + sessionStorage.getItem("name");
+    }
+
+    function removeLocalStorage() {
+        localStorage.removeItem("name");
+        document.getElementById("localStorage").innerHTML = "Name: " + localStorage.getItem("name");
+    }
+
+    function clearLocalStorage() {
+        localStorage.clear();
+        document.getElementById("localStorage").innerHTML = "Name: " + localStorage.getItem("name");
+    }
+
+    function removeSessionStorage() {
+        sessionStorage.removeItem("name");
+        document.getElementById("sessionStorage").innerHTML = "Name: " + sessionStorage.getItem("name");
+    }
+
+    function clearSessionStorage() {
+        sessionStorage.clear();
+        document.getElementById("sessionStorage").innerHTML = "Name: " + localStorage.getItem("name");
+    }
+</script>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Type Conversion</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Details</h1>
+
+    <table id="table">
+        <tr>
+            <td>Sl.No</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Id</td>
+            <td>Age</td>
+            <td>DOB</td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    let a = "20.5";
+    let b = 20;
+
+    console.log("Data Type of a:", typeof a);
+    console.log("Data Type of b:", typeof b);
+
+    console.log("Sum of a and b:", Number(a) + b);
+    console.log("Sum of a and b:", parseInt(a) + b);
+    console.log("Sum of a and b:", parseFloat(a) + b);
+
+    let array = [1, 12, 2, 3];
+    let array2 = ["1", "12", "2", "3"];
+    let array3 = [1, "sdfsd", false, 2];
+    let array4 = [{ "firstname": "kamesh" }, { "firstname": "kamesh" }];
+
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        age: 25,
+        dob: "07-06-1990",
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        },
+        dobAge: function () {
+            return this.dob + " (" + this.age + ")"
+        }
+    };
+
+    document.write(person.fullName());
+    document.write(person.dobAge());
+
+    let row = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        age: 25,
+        dob: "07-06-1990",
+    };
+
+    let tablesRows = [
+        {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            age: 25,
+            dob: "07-06-1990",
+        },
+        {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            age: 25,
+            dob: "07-06-1990",
+        },
+        {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            age: 25,
+            dob: "07-06-1990",
+        }
+    ];
+
+    for (const row of tablesRows) {
+        let tr = document.createElement("tr");
+
+        let slNotd = document.createElement("td");
+        slNotd.innerHTML = row.id;
+
+        let firstnametd = document.createElement("td");
+        firstnametd.innerHTML = row.firstName;
+
+        let lastnametd = document.createElement("td");
+        lastnametd.innerHTML = row.lastName;
+
+        let agetd = document.createElement("td");
+        agetd.innerHTML = row.age;
+
+        let idtd = document.createElement("td");
+        idtd.innerHTML = row.id;
+
+        let dobtd = document.createElement("td");
+        dobtd.innerHTML = row.dob;
+
+        tr.appendChild(slNotd);
+        tr.appendChild(firstnametd);
+        tr.appendChild(lastnametd);
+        tr.appendChild(agetd);
+        tr.appendChild(idtd);
+        tr.appendChild(dobtd);
+
+        document.getElementById('table').appendChild(tr);
+    }
+
+</script>
+
+</html>
